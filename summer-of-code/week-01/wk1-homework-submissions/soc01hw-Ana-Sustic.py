@@ -9,23 +9,40 @@ def isleapyear(year):
     return False
 year =int(input('Enter a year:'))
 if isleapyear(year):
-    print(f"There are {366*24} hours in year {year}.")
+    print(f"There are {366*24} hours in year {year}.", end=' ')
 else:
-    print('There are {} hours in year {}.'.format(365*24, year))
+    print(f'There are {365*24} hours in year {year}.', end=' ')
 
 x=input ("Press any key to next homework")
 
 #- Minutes in a decade. How many minutes are in a decade?
-print('There are {} in a decade.'.format(10*365*24*60))
+print(f'There are {10*365*24*60} in a decade.')
 
 x=input ("Press any key to next homework")
 #- Your age in seconds. How many seconds old are you? (I'm not going to check your answer, so be as accurate—or not—as you want.)
-#- Andreea Visanoiu​: I'm 48618000 seconds old hahaha. Calculate @Andreea Visanoiu's age.
+print(f'I am {40*365*24*60*60} seconds old.')
 
-# 
-# print ("Home work 2 title") 
-# 
-# #do your home work #2 coding here print("code for home work 2 goes here") 
-# x=input ("Press any key to next home work") 
-# print ("Home work 3 title") print("code for home work 3 goes here") #do your home work #2 coding here # and so on ... the input () is cool way to make a pause and run
+x=input ("Press any key to next homework")
+#- Andreea Visanoiu​: I'm 48618000 seconds old hahaha. Calculate @Andreea Visanoiu's age.
+print(f'Andreea Visanoiu is {48618000/(365*24*60*60)} years old.')
+
+x=input ("Press any key to next homework")
+
+#Here are some tougher questions: - How many days does it take for a 32-bit system to timeout, if it has a bug with integer overflow?
+print(f'It takes {pow(2,32)/(24*60*60*1000)} days for a 32-bit system to timeout.')
+
+x=input ("Press any key to next homework")
+
+#How about a 64-bit system?
+print(f'It takes {pow(2,64)/(24*60*60*1000)} days for a 64-bit system to timeout.')
+
+x=input ("Press any key to next homework")
+
+#Calculate your age accurately based on your birthday (maybe use time of day e.g. 8:23am
+#if you know it, use 12:00 noon midday) - you will need Python modules.
+
+
+
+
+
 
