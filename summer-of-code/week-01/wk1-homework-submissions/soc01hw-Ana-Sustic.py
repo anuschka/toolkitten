@@ -41,7 +41,9 @@ x=input ("Press any key to next homework")
 #Calculate your age accurately based on your birthday (maybe use time of day e.g. 8:23am
 #if you know it, use 12:00 noon midday) - you will need Python modules.
 
-
+import datetime
+delta = datetime.datetime.now()-datetime.datetime(1980, 7, 6, 12, 0)
+print (f'My exact age is {delta.days} days and {delta.seconds} seconds')
 
 
 
