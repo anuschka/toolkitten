@@ -45,6 +45,43 @@ import datetime
 delta = datetime.datetime.now()-datetime.datetime(1980, 7, 6, 12, 0)
 print (f'My exact age is {delta.days} days and {delta.seconds} seconds')
 
+x=input ("Press any key to next homework")
+#Write a program that asks for a person’s first name, then middle, and then last. 
+#Finally, it should greet the person using their full name.
+
+firstname = input("Enter your first name please:")
+middlename = input("Enter your first name please:")
+lastname = input("Enter your first name please:")
+print(f"Hello {firstname} {middlename} {lastname}. It was nice meeting you!")
+
+x=input ("Press any key to next homework")
+
+#Write a program that asks for a person’s favorite number. Have your program add 1 to the
+# number, and then suggest the result as a bigger and better favorite number. 
+# (Do be tactful about it, though.)
+
+num = input("Enter your favorite number")
+try:
+   val = int(num)
+   print(f"A better number is: {val+1}")
+except ValueError:
+   print("Please enter a number!")
+
+#Write an angry boss program that rudely asks what you want. Whatever you answer, the angry
+#boss should yell it back to you and then fire you. For example, if you type in I want
+#a raise, it should yell back like this: 'WHADDAYA MEAN "I WANT A RAISE"?!? YOU'RE FIRED!!'
 
 
+question = input("What do you want?")
+print(f"\'WHADDAYA MEAN \"{question.upper()}\"?!? YOU'RE FIRED!!\'")
 
+#Here’s something for you to do in order to play around more with center, ljust, and rjust: 
+#write a program that will display a table of contents (see day3.md to review the format)
+
+print("Table of Contents")
+print("")
+print("Chapter 1: Getting Started".ljust(30," ")+"page 1".ljust(20," "))
+print("Chapter 2: Numbers".ljust(30," ")+"page 9".ljust(20," "))
+print("Chapter 3: Letters".ljust(30," ")+"page 13".ljust(20," "))
+                
+                
