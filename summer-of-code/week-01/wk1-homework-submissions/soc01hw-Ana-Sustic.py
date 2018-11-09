@@ -9,9 +9,9 @@ def isleapyear(year):
     return False
 year =int(input('Enter a year:'))
 if isleapyear(year):
-    print(f"There are {366*24} hours in year {year}.", end=' ')
+    print(f"There are {366*24} hours in year {year}.")
 else:
-    print(f'There are {365*24} hours in year {year}.', end=' ')
+    print(f'There are {365*24} hours in year {year}.')
 
 x=input ("Press any key to next homework")
 
@@ -60,12 +60,14 @@ x=input ("Press any key to next homework")
 # number, and then suggest the result as a bigger and better favorite number. 
 # (Do be tactful about it, though.)
 
-num = input("Enter your favorite number")
+num = input("Enter your favorite number: ")
 try:
    val = int(num)
    print(f"A better number is: {val+1}")
 except ValueError:
    print("Please enter a number!")
+
+x=input ("Press any key to next homework")
 
 #Write an angry boss program that rudely asks what you want. Whatever you answer, the angry
 #boss should yell it back to you and then fire you. For example, if you type in I want
@@ -75,6 +77,8 @@ except ValueError:
 question = input("What do you want?")
 print(f"\'WHADDAYA MEAN \"{question.upper()}\"?!? YOU'RE FIRED!!\'")
 
+x=input ("Press any key to next homework")
+
 #Here’s something for you to do in order to play around more with center, ljust, and rjust: 
 #write a program that will display a table of contents (see day3.md to review the format)
 
@@ -83,5 +87,21 @@ print("")
 print("Chapter 1: Getting Started".ljust(30," ")+"page 1".ljust(20," "))
 print("Chapter 2: Numbers".ljust(30," ")+"page 9".ljust(20," "))
 print("Chapter 3: Letters".ljust(30," ")+"page 13".ljust(20," "))
+
+x=input ("Press any key to next homework")
+
+#Write a program that prints out the lyrics to that beloved classic, “99 Bottles of Beer on the Wall.”
+
+i = 99
+while i>0:
+  print(f'{i}  bottles of beer on the wall, {i} bottles of beer.')
+  i=i-1
+  if i>0:
+    print(f'Take one down and pass it around, {i} bottles of beer on the wall.')
+  else:
+    print('Take one down and pass it around, no more bottles of beer on the wall.')
+  print(" ")
+print("No more bottles of beer on the wall, no more bottles of beer.")                
+print("Go to the store and buy some more, 99 bottles of beer on the wall.")
                 
-                
+x=input ("Press any key to next homework")
