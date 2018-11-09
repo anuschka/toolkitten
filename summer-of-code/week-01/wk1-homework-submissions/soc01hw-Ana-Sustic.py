@@ -105,3 +105,18 @@ print("No more bottles of beer on the wall, no more bottles of beer.")
 print("Go to the store and buy some more, 99 bottles of beer on the wall.")
                 
 x=input ("Press any key to next homework")
+
+#Whatever you say to Grandma (whatever you type in), she should respond with this: 
+#HUH?! SPEAK UP, GIRL! unless you shout it (type in all capitals). 
+#If you shout, she can hear you (or at least she thinks so) and yells back: 
+#NO, NOT SINCE 1938! 
+#To make your program really believable, have Grandma shout a different year each time, maybe
+# any year at random between 1930 and 1950. 
+
+import random
+phrase = input("Tell something to grandma?")
+if phrase.isupper() !=True:
+  print("HUH?! SPEAK UP, GIRL!")
+else:
+  year = random.randrange(1930, 1950, 1)
+  print(f"NO, NOT SINCE {year}!")
