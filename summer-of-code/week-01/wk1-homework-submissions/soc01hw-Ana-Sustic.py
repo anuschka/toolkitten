@@ -111,12 +111,61 @@ x=input ("Press any key to next homework")
 #If you shout, she can hear you (or at least she thinks so) and yells back: 
 #NO, NOT SINCE 1938! 
 #To make your program really believable, have Grandma shout a different year each time, maybe
-# any year at random between 1930 and 1950. 
+# any year at random between 1930 and 1950.
+#You can’t stop talking to Grandma until you shout BYE. 
 
 import random
-phrase = input("Tell something to grandma?")
-if phrase.isupper() !=True:
-  print("HUH?! SPEAK UP, GIRL!")
-else:
-  year = random.randrange(1930, 1950, 1)
-  print(f"NO, NOT SINCE {year}!")
+phrase = " "
+while phrase !="BYE":
+  phrase = input("Tell something to grandma?")
+  if phrase == "BYE":
+    break
+  if phrase.isupper() !=True:
+  		print("HUH?! SPEAK UP, GIRL!")
+  else:
+  		year = random.randrange(1930, 1950, 1)
+  		print(f"NO, NOT SINCE {year}!")
+print("Goodbye!")
+
+#What if Grandma doesn’t want you to leave? When you shout BYE, she could pretend not to hear you. 
+#Change your previous program so that you have to shout BYE three times in a row. Make sure to test your program: 
+#if you shout BYE three times but not in a row, you should still be talking to Grandma.
+
+import random
+phrase = " "
+#counter counts consequitive "BYE" phrases
+counter = 0
+#exit controls the while loop. 
+exit = 0
+while exit !=1:
+  phrase = input("Tell something to grandma?")
+  if (phrase == "BYE") and (counter == 2):
+    break
+  elif phrase == "BYE":
+    counter=counter +1
+  else:
+    counter=0
+  if phrase.isupper() !=True:
+  		print("HUH?! SPEAK UP, GIRL!")
+  else:
+  		year = random.randrange(1930, 1950, 1)
+  		print(f"NO, NOT SINCE {year}!")
+print("Goodbye!")
+
+#Write a program that asks for a starting year and an ending year and then puts all the leap years 
+#between them (and including them, if they are also leap years). Leap years are years divisible by 
+#4 (like 1984 and 2004). However, years divisible by 100 are not leap years (such as 1800 and 1900) 
+#unless they are also divisible by 400 (such as 1600 and 2000, which were in fact leap years). What a mess!
+
+startyear = int(input("Enter starting year:"))
+endyear = int(input("Enter ending year:"))
+def leapyr(n):
+	#divisible by for and not divisible by 100 or divisible by 4 and divisible by 400
+    if (n%4==0 and n%100!=0) or (n%4==0 and n%400==0):
+        print (f"{n} is a leap year.")
+
+for year in range(startyear, endyear+1):
+  leapyr(year)
+
+#
+
