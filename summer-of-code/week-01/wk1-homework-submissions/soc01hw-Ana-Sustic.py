@@ -167,5 +167,93 @@ def leapyr(n):
 for year in range(startyear, endyear+1):
   leapyr(year)
 
-#
+#Go for a walk, look around the park, try to count something. Anything! 
+#And write a program about it. e.g. number of stairs, steps, windows, leaves estimated 
+#in the park, kids, dogs, estimate your books by bookshelf, toiletries, wardrobe.
 
+printf(f"Number of stairs is {3*10*2}")
+
+#Write the program that asks us to type as many words as we want (one word per line, continuing 
+#until we just press Enter on an empty line) and then repeats the words back to us in alphabetical order. 
+#Make sure to test your program thoroughly; for example, does hitting Enter on an empty line always exit your program? 
+#Even on the first line? And the second? Hint: There’s a lovely array method that will give you a sorted version of 
+#an array: sorted(). Use it!
+array = []
+while True:
+  word = input("Enter a word please:")
+  if len(word)==0:
+    break
+  else:
+    array.append(word)
+print(sorted(array))
+
+#Write a table of contents program here. Start the program with a list holding all of the information for your 
+#table of contents (chapter names, page numbers, and so on). Then print out the information from the list in a 
+#beautifully formatted table of contents. Use string formatting such as left align, right align, center.
+
+list = ["Table of Contents","Chapter 1: Getting Started","page 1", "Chapter 2: Numbers","page 9","Chapter 3: Letters","page 13"]
+
+print(list[0])
+print("")
+print(list[1].ljust(30," ")+list[2].ljust(20," "))
+print(list[3].ljust(30," ")+list[4].ljust(20," "))
+print(list[5].ljust(30," ")+list[6].ljust(20," "))
+
+#Write a function that prints out "moo" n times.
+def moo(n):
+  for i in range(n):
+    print("moo")
+number=input("Enter the number of times moo is printed:")
+if number<=0:
+  print("You did not enter a positive integer!")
+else:
+  try:
+    val = int(number)
+    moo(val)
+  except ValueError:
+    print("You did not enter an integer!")
+
+#Write a method that when passed an integer between 1 and 3000 (or so) returns a string containing the proper old-school 
+#Roman numeral. In other words, old_roman_numeral 4 should return 'IIII'. Make sure to test your method on a bunch of 
+#different numbers. Hint: Use the integer division and modulus methods. For reference, these are the values of the letters 
+#used: I = 1 V = 5 X = 10 L = 50 C = 100 D = 500 M = 1000
+def roman(n):
+  romanlit =""
+  while n!=0:
+    if n>=1000:
+      romanlit = romanlit + (n//1000)*"M"
+      n=n-1000*(n//1000)
+    elif n>=500:
+      romanlit = romanlit + (n//500)*"D"
+      n=n-500*(n//500)
+    elif n>=100:
+      romanlit = romanlit + (n//100)*"C"
+      n=n-100*(n//100)
+    elif n>=50:
+      romanlit = romanlit + (n//50)*"L"
+      n=n-50*(n//50)
+    elif n>=10:
+      romanlit = romanlit + (n//10)*"X"
+      n=n-10*(n//10)
+    elif n>=5:
+      romanlit = romanlit + (n//5)*"V"
+      n=n-5*(n//5)
+    else:
+      romanlit = romanlit + (n)*"I"
+      n=n-1*(n//1)
+
+  return romanlit
+
+number=int(input("Enter a number:"))
+if number<=0:
+  print("You did not enter a positive integer!")
+else:
+  try:
+    val = int(number)
+    print(f"Roman numeral for this number is: {roman(val)}")
+  except ValueError:
+    print("You did not enter an integer!")
+
+#Eventually, someone thought it would be terribly clever if putting a smaller number before a larger one meant you had to 
+#subtract the smaller one. As a result of this development, you must now suffer. Rewrite your previous method to return the 
+#new-style Roman numerals so when someone calls roman_numeral 4, it should return 'IV', 90 should be 'XC' etc.
