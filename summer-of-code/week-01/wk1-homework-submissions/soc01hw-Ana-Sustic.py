@@ -127,6 +127,7 @@ while phrase !="BYE":
   		print(f"NO, NOT SINCE {year}!")
 print("Goodbye!")
 
+x=input ("Press any key to next homework")
 #What if Grandma doesn’t want you to leave? When you shout BYE, she could pretend not to hear you. 
 #Change your previous program so that you have to shout BYE three times in a row. Make sure to test your program: 
 #if you shout BYE three times but not in a row, you should still be talking to Grandma.
@@ -152,6 +153,7 @@ while exit !=1:
   		print(f"NO, NOT SINCE {year}!")
 print("Goodbye!")
 
+x=input ("Press any key to next homework")
 #Write a program that asks for a starting year and an ending year and then puts all the leap years 
 #between them (and including them, if they are also leap years). Leap years are years divisible by 
 #4 (like 1984 and 2004). However, years divisible by 100 are not leap years (such as 1800 and 1900) 
@@ -167,6 +169,7 @@ def leapyr(n):
 for year in range(startyear, endyear+1):
   leapyr(year)
 
+x=input ("Press any key to next homework")
 #Go for a walk, look around the park, try to count something. Anything! 
 #And write a program about it. e.g. number of stairs, steps, windows, leaves estimated 
 #in the park, kids, dogs, estimate your books by bookshelf, toiletries, wardrobe.
@@ -187,6 +190,7 @@ while True:
     array.append(word)
 print(sorted(array))
 
+x=input ("Press any key to next homework")
 #Write a table of contents program here. Start the program with a list holding all of the information for your 
 #table of contents (chapter names, page numbers, and so on). Then print out the information from the list in a 
 #beautifully formatted table of contents. Use string formatting such as left align, right align, center.
@@ -199,6 +203,7 @@ print(list[1].ljust(30," ")+list[2].ljust(20," "))
 print(list[3].ljust(30," ")+list[4].ljust(20," "))
 print(list[5].ljust(30," ")+list[6].ljust(20," "))
 
+x=input ("Press any key to next homework")
 #Write a function that prints out "moo" n times.
 def moo(n):
   for i in range(n):
@@ -213,6 +218,7 @@ else:
   except ValueError:
     print("You did not enter an integer!")
 
+x=input ("Press any key to next homework")
 #Write a method that when passed an integer between 1 and 3000 (or so) returns a string containing the proper old-school 
 #Roman numeral. In other words, old_roman_numeral 4 should return 'IIII'. Make sure to test your method on a bunch of 
 #different numbers. Hint: Use the integer division and modulus methods. For reference, these are the values of the letters 
@@ -254,6 +260,63 @@ else:
   except ValueError:
     print("You did not enter an integer!")
 
+x=input ("Press any key to next homework")
 #Eventually, someone thought it would be terribly clever if putting a smaller number before a larger one meant you had to 
 #subtract the smaller one. As a result of this development, you must now suffer. Rewrite your previous method to return the 
 #new-style Roman numerals so when someone calls roman_numeral 4, it should return 'IV', 90 should be 'XC' etc.
+def roman(n):
+  romanlit =""
+  while n!=0:
+    if n>=1000:
+      romanlit = romanlit + (n//1000)*"M"
+      n=n-1000*(n//1000)
+    elif n>=900:
+      romanlit = romanlit + (n//500)*"CM"
+      n=n-900*(n//900)
+    elif n>=500:
+      romanlit = romanlit + (n//500)*"D"
+      n=n-500*(n//500)
+    elif n>=400:
+      romanlit = romanlit + (n//400)*"CD"
+      n=n-400*(n//400)
+    elif n>=100:
+      romanlit = romanlit + (n//100)*"C"
+      n=n-100*(n//100)
+    elif n>=90:
+      romanlit = romanlit + (n//90)*"XC"
+      n=n-90*(n//90)
+    elif n>=50:
+      romanlit = romanlit + (n//50)*"L"
+      n=n-50*(n//50)
+    elif n>=40:
+      romanlit = romanlit + (n//50)*"XL"
+      n=n-40*(n//40) 
+    elif n>=10:
+      romanlit = romanlit + (n//10)*"X"
+      n=n-10*(n//10)
+    elif n>=9:
+      romanlit = romanlit + (n//9)*"IX"
+      n=n-9*(n//9)  
+    elif n>=5:
+      romanlit = romanlit + (n//5)*"V"
+      n=n-5*(n//5)
+    elif n>=4:
+      romanlit = romanlit + (n//4)*"IV"
+      n=n-4*(n//4)  
+    else:
+      romanlit = romanlit + (n)*"I"
+      n=n-1*(n//1)
+
+  return romanlit
+
+number=int(input("Enter a number:"))
+if number<=0:
+  print("You did not enter a positive integer!")
+else:
+  try:
+    val = int(number)
+    print(f"Roman numeral for this number is: {roman(val)}")
+  except ValueError:
+    print("You did not enter an integer!")
+
+x=input ("End of homework for week 1. Thanks for reviewing!")
